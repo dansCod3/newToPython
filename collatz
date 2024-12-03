@@ -1,0 +1,25 @@
+def collatz(n):
+    if n % 2 == 0:
+       print(n // 2)
+       return n // 2
+    else:
+        print(3 * n + 1)
+        return 3 * n + 1
+
+def main():
+    try:
+        n = int(input("type a number: "))
+        while True:
+            collatz(n)
+            if n != 1:
+                print(n)
+                n = collatz(n)
+                continue
+            else:
+                print(n)
+                break
+    except ValueError:
+        print("that is not an intiger")
+        main()
+
+main()
